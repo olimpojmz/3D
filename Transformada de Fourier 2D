@@ -1,0 +1,11 @@
+%Capture image
+x = imread('PelotaGolf.png');
+data = rgb2gray(x);
+
+figure(1); imshow(data)
+
+%Transform Fourier
+TF = fftshift(fft2(data));
+
+figure(2),imagesc(log10(abs(TF))), colormap gray
+% % %
